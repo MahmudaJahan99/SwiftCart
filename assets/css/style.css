@@ -12,6 +12,7 @@
     --accent-orange: #F97316;
     --success-color: #10B981;
     --font-dark: #1E293B;
+    --font-light: rgba(248, 250, 252, 0.8);
 }
 
 html {
@@ -24,6 +25,7 @@ body {
     font-family: "Inter", sans-serif;
     color: var(--font-dark);
     font-size: 1.6rem;
+    color: var(--font-dark);
 }
 
 /*-------------------- REUSABLE CLASS --------------------*/
@@ -32,7 +34,21 @@ body {
     color: var(--primary-navy);
 }
 
-/* logo */
+.btn-primary {
+    color: var(--font-light);
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    background-color: var(--accent-orange);
+    border: var(--accent-orange);
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    box-shadow: 5px 5px 5px rgba(0 0 0 / 0.1);
+}
+
+/* logo and navbar */
 #logo {
     color: var(--primary-navy);
     font-size: 2rem;
@@ -61,6 +77,22 @@ nav i {
 
 .navbar-end .btn:hover, .menu-horizontal li:hover {
     background-color: var(--secondary-navy);
+}
+
+/* Hero Section */
+.hero {
+}
+.hero-overlay {
+    background: linear-gradient(to right, var(--primary-navy), transparent);
+}
+
+h1.heading{
+    color: var(--bg-light);
+}
+
+.hero p {
+    color: var(--font-light);
+
 }
 
 /* Product Cards:

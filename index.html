@@ -32,7 +32,7 @@
   <body>
     <!-------------------- HEADER -------------------->
     <header>
-      <nav class="navbar bg-base-100 shadow-sm">
+      <nav class="navbar bg-base-100 shadow-sm py-5">
         <!---------- Logo ---------->
         <div class="navbar-start">
           <a href="#home" class="logo heading" id="logo">SwiftCart</a>
@@ -58,7 +58,7 @@
             </div>
             <ul
               tabindex="-1"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-4 w-52 p-2 shadow"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li><a href="#home" class="text-xl">Home</a></li>
               <li><a href="#products" class="text-xl">Products</a></li>
@@ -68,6 +68,26 @@
           </div>
         </div>
       </nav>
+
+      <!---------- Hero Section ---------->
+      <section id="home" class="-mt-20">
+        <div
+          class="hero min-h-screen"
+          style="background-image: url(assets/images/banner-image.png)"
+        >
+          <div class="hero-overlay"></div>
+          <div class="hero-content text-neutral-content text-center md:text-left">
+            <div class="max-w-7xl">
+              <h1 class="mb-5 text-5xl md:text-6xl font-bold heading">Best Collection For You</h1>
+              <p class="mb-10 text-3xl">
+                Discover the latest trend in fashion, electronics, and more.
+                Shop with confidence and style at Swiftcart.
+              </p>
+              <button id="shop-now-btn" class="btn btn-primary">Shop Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </header>
     <!-------------------- JAVASCRIPT -------------------->
     <script src="./assets/js/script.js"></script>
