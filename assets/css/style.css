@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /*-------------------- TYPOGRAPHY --------------------*/
+    --heading-text: "Montserrat", sans-serif;
+    --body-text: "Inter", sans-serif;
+
+    /*-------------------- COLOR --------------------*/
+    --bg-light: #F8FAFC;
+    --primary-navy: #0A192F;
+    --accent-orange: #F97316;
+    --success-color: #10B981;
+    --font-dark: #1E293B;
+}
+
+html {
+  font-size: 62.5%; /* Default 16px * 62.5% = 10px base */
+}
+
+body {
+    background-color: var(--bg-light);
+    font-family: "Inter", sans-serif;
+    color: var(--font-dark);
+    font-size: 1.6rem;
+}
+
+    /*-------------------- REUSABLE CLASS --------------------*/
+.heading {
+    font-family: "Montserrat", sans-serif;
+    color: var(--primary-navy);
+}
+
+/* Product Cards:
+
+Background: White (#FFFFFF).
+
+Border: Very light grey (#E2E8F0) or a subtle shadow (box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);).
+
+Corner Radius: 8px (gives a modern, friendly feel).
+
+Buttons:
+
+Primary Button (Add to Cart): Background: Orange; Text: White; Bold. Hover effect: Slightly darker orange.
+
+Secondary Button (Wishlist): Transparent background; Navy border; Navy text.
+
+Input Fields (Search Bar):
+
+Large, rounded (25px border-radius), with a subtle Navy border when focused. */
