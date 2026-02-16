@@ -30,6 +30,45 @@
   </head>
 
   <body>
+    <!-------------------- HEADER -------------------->
+    <header>
+      <nav class="navbar bg-base-100 shadow-sm">
+        <!---------- Logo ---------->
+        <div class="navbar-start">
+          <a href="#home" class="logo heading" id="logo">SwiftCart</a>
+        </div>
+        <!---------- menu items on large screen ---------->
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 gap-7">
+            <li><a href="#home" class="text-2xl">Home</a></li>
+            <li><a href="#products" class="text-2xl">Products</a></li>
+            <li><a href="#about" class="text-2xl">About</a></li>
+            <li><a href="#contact" class="text-2xl">Contact</a></li>
+          </ul>
+        </div>
+        <!---------- cart and hamburger on small screen ---------->
+        <div class="navbar-end gap-5">
+          <a class="btn btn-ghost">
+            <i class="ri-shopping-cart-line"></i>
+          </a>
+          <!-- hamburger on small screen -->
+          <div class="dropdown dropdown-end">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <i class="ri-menu-line"></i>
+            </div>
+            <ul
+              tabindex="-1"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-4 w-52 p-2 shadow"
+            >
+              <li><a href="#home" class="text-xl">Home</a></li>
+              <li><a href="#products" class="text-xl">Products</a></li>
+              <li><a href="#about" class="text-xl">About</a></li>
+              <li><a href="#contact" class="text-xl">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <!-------------------- JAVASCRIPT -------------------->
     <script src="./assets/js/script.js"></script>
   </body>

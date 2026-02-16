@@ -8,13 +8,15 @@
     /*-------------------- COLOR --------------------*/
     --bg-light: #F8FAFC;
     --primary-navy: #0A192F;
+    --secondary-navy: rgba(10, 25, 47, 0.1);
     --accent-orange: #F97316;
     --success-color: #10B981;
     --font-dark: #1E293B;
 }
 
 html {
-  font-size: 62.5%; /* Default 16px * 62.5% = 10px base */
+    font-size: 62.5%;
+    /* Default 16px * 62.5% = 10px base */
 }
 
 body {
@@ -24,10 +26,41 @@ body {
     font-size: 1.6rem;
 }
 
-    /*-------------------- REUSABLE CLASS --------------------*/
+/*-------------------- REUSABLE CLASS --------------------*/
 .heading {
     font-family: "Montserrat", sans-serif;
     color: var(--primary-navy);
+}
+
+/* logo */
+#logo {
+    color: var(--primary-navy);
+    font-size: 2rem;
+    font-weight: 700;
+    margin-inline: 2rem;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+}
+
+#logo:hover {
+    text-shadow: 2px 2px rgba(0 0 0 / 0.1);
+}
+
+nav i {
+    font-size: 2rem;
+}
+
+.navbar-end .btn i {
+    padding: 5px;
+}
+
+.navbar-end .btn, .menu-horizontal li {
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.navbar-end .btn:hover, .menu-horizontal li:hover {
+    background-color: var(--secondary-navy);
 }
 
 /* Product Cards:
