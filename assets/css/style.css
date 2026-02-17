@@ -210,6 +210,10 @@ h1.heading {
     display: block;
 }
 
+#category-btns-container .btn {
+    text-transform: capitalize;
+}
+
 /* Footer */
 footer.section-container {
     margin-block: 0;

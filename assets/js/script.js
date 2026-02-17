@@ -5,6 +5,9 @@ const trendingProductsDisplayContainer = document.getElementById(
 const allProductsDisplayContainer = document.getElementById(
   "all-products-display-container",
 );
+const allCategoriesContainer = document.getElementById(
+  "category-btns-container",
+);
 
 // ==================== LOAD ALL DATA ====================
 const loadAllProducts = () => {
@@ -20,7 +23,7 @@ const loadAllProducts = () => {
       displayAllProducts(trending, trendingProductsDisplayContainer);
 
       // 2. Display All Products
-      displayAllProducts(products, allProductsDisplayContainer)
+      displayAllProducts(products, allProductsDisplayContainer);
     });
 };
 
@@ -70,5 +73,33 @@ const displayAllProducts = (products, container) => {
   }
 };
 
-// ==================== CALL LOAD ALL DATA ====================
+// ==================== LOAD ALL CATEGORIES ====================
+const loadAllCategories = () => {
+  fetch("https://fakestoreapi.com/products/categories")
+    .then((response) => response.json())
+    .then((categories) => {
+      const allCategories = ["all", ...categories];
+      displayAllCategories(allCategories);
+    });
+};
+
+// ==================== DISPLAY ALL CATEGORIES ====================
+const displayAllCategories = (categories) => {
+  // clear the container
+  allCategoriesContainer.innerHTML = "";
+
+  // create dynamic cards for products
+  for (let category of categories) {
+    const buttonsContainer = document.createElement("div");
+    buttonsContainer.innerHTML = `
+        <button class="btn btn-soft btn-primary">${category}</button>
+    `;
+
+    // append container
+    allCategoriesContainer.append(buttonsContainer);
+  }
+};
+
+// ==================== CALL FUNCTIONS ====================
 loadAllProducts();
+loadAllCategories();
