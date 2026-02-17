@@ -12,6 +12,8 @@
     --accent-orange: #F97316;
     --success-color: #10B981;
     --font-dark: #1E293B;
+    --font-dark-2: rgba(30, 41, 59, 0.8);
+    --font-dark-3: rgba(30, 41, 59, 0.5);
     --font-light: rgba(248, 250, 252, 0.8);
 }
 
@@ -32,6 +34,8 @@ body {
 .heading {
     font-family: "Montserrat", sans-serif;
     color: var(--primary-navy);
+    font-weight: 700;
+    font-size: 3rem;
 }
 
 .btn-primary {
@@ -42,6 +46,12 @@ body {
     background-color: var(--accent-orange);
     border: var(--accent-orange);
     box-shadow: none;
+}
+
+.section-container {
+    text-align: center;
+    width: 90%;
+    margin: 40px auto;
 }
 
 .btn-primary:hover {
@@ -70,29 +80,88 @@ nav i {
     padding: 5px;
 }
 
-.navbar-end .btn, .menu-horizontal li {
+.navbar-end .btn,
+.menu-horizontal li {
     border-radius: 8px;
     transition: background-color 0.3s;
 }
 
-.navbar-end .btn:hover, .menu-horizontal li:hover {
+.navbar-end .btn:hover,
+.menu-horizontal li:hover {
     background-color: var(--secondary-navy);
 }
 
 /* Hero Section */
-.hero {
-}
 .hero-overlay {
     background: linear-gradient(to right, var(--primary-navy), transparent);
 }
 
-h1.heading{
+h1.heading {
     color: var(--bg-light);
 }
 
 .hero p {
     color: var(--font-light);
+}
 
+/* About section */
+#about p {
+    color: var(--font-dark-2);
+}
+
+/* #about .grid {
+    grid-auto-rows: 1fr;
+} */
+
+#about .card {
+    border-radius: 8px;
+    min-height: 170px;
+}
+
+.card-icon-container {
+    background-color: var(--secondary-navy);
+    width: 60px;
+    height: 60px;
+    display: grid;
+    place-items: center;
+    border-radius: 8px;
+    border: 5px solid white;
+    box-shadow: 2px 5px 10px rgba(0 0 0 / 0.1);
+    
+}
+
+.card-body {
+    position: relative;
+}
+
+.card-body .card-icon-container {
+    position: absolute;
+    top: -30px;
+}
+
+.card-body i {
+    font-size: 2.8rem;
+    color: var(--accent-orange);
+}
+
+.card-title {
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    margin-top: 30px;
+}
+
+.card-body p {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--font-dark-3);
+}
+
+/*-------------------- REUSABLE CLASS --------------------*/
+/*  */
+@media screen and (min-width: 768px) {
+    #about .card {
+    min-height: 220px;
+}
 }
 
 /* Product Cards:
