@@ -9,8 +9,20 @@ const allCategoriesContainer = document.getElementById(
   "category-btns-container",
 );
 
+// Select all links that point to the products section
+const productLinks = document.querySelectorAll('a[href*="#product"]');
+
 const homeContents = document.getElementById("home-contents");
 const productsContainer = document.getElementById("products-container");
+
+productLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    productsContainer.classList.remove("hidden");
+    homeContents.classList.add("hidden");
+    console.log('clicked')
+  });
+});
 
 // ==================== LOAD ALL DATA ====================
 const loadAllProducts = () => {
@@ -117,7 +129,7 @@ const loadProductsByCategory = (category) => {
     .then((response) => response.json())
     .then((products) => {
       displayAllProducts(products, allProductsDisplayContainer);
-      console.log(url);
+      // console.log(url);
     });
 };
 

@@ -43,6 +43,10 @@ body {
     color: var(--accent-orange);
 }
 
+.hide {
+    display: none;
+}
+
 .btn-primary {
     color: var(--font-light);
     padding: 20px;
