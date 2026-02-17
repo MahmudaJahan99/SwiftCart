@@ -91,16 +91,34 @@ const displayAllCategories = (categories) => {
   // clear the container
   allCategoriesContainer.innerHTML = "";
 
-  // create dynamic cards for products
+  // create dynamic buttons for categories
   for (let category of categories) {
-    const buttonsContainer = document.createElement("div");
-    buttonsContainer.innerHTML = `
-        <button class="btn btn-soft btn-primary">${category}</button>
-    `;
+    const button = document.createElement("button");
+    button.classList = "btn btn-soft btn-primary";
+    button.textContent = category;
+    button.setAttribute("onclick", `loadProductsByCategory("${category}")`);
 
-    // append container
-    allCategoriesContainer.append(buttonsContainer);
+    // append to container
+    allCategoriesContainer.append(button);
   }
+};
+
+// ==================== LOAD PRODUCTS BY CATEGORY ====================
+const loadProductsByCategory = (category) => {
+  // If selected category is all
+  if (category === "all") {
+    loadAllProducts();
+    return;
+  }
+
+  // If selected category is not all
+  const url = `https://fakestoreapi.com/products/category/${encodeURIComponent(category)}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((products) => {
+      displayAllProducts(products, allProductsDisplayContainer);
+      console.log(url);
+    });
 };
 
 // ==================== CALL FUNCTIONS ====================
