@@ -9,18 +9,40 @@ const allCategoriesContainer = document.getElementById(
   "category-btns-container",
 );
 
-// Select all links that point to the products section
-const productLinks = document.querySelectorAll('a[href*="#product"]');
-
-const homeContents = document.getElementById("home-contents");
+const homeContents = document.getElementById("home-container");
 const productsContainer = document.getElementById("products-container");
 
-productLinks.forEach((link) => {
+// All links that point to a navbar section
+const sectionLinks = document.querySelectorAll('a[href^="#"]');
+
+sectionLinks.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
-    productsContainer.classList.remove("hidden");
-    homeContents.classList.add("hidden");
-    console.log('clicked')
+
+    // remove # and get the sections
+    const targetId = link.getAttribute("href").substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    // Show products-container only for #products otherwise show homepage
+    if (targetId === "products") {
+      productsContainer.classList.remove("hidden");
+      homeContents.classList.add("hidden");
+    } else {
+      productsContainer.classList.add("hidden");
+      homeContents.classList.remove("hidden");
+    }
+
+    // Smooth scroll to the section
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Remove active from all nav links
+    removeActive();
+    // Make sure only nav-links (not footer links) get the active class
+    if (link.classList.contains("nav-link")) {
+      link.classList.add("active");
+    }
   });
 });
 
@@ -142,14 +164,6 @@ const navLinks = document.querySelectorAll(".nav-link");
 function removeActive() {
   navLinks.forEach((link) => link.classList.remove("active"));
 }
-
-// ================= SCROLL ACTIVE =================
-navLinks.forEach((link) => {
-  link.addEventListener("click", function (e) {
-    removeActive();
-    this.classList.add("active");
-  });
-});
 
 // ================= SCROLL ACTIVE =================
 const sections = document.querySelectorAll("section[id]");
