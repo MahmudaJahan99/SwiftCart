@@ -58,12 +58,17 @@ body {
     box-shadow: 5px 5px 5px rgba(0 0 0 / 0.1);
 }
 
-/* logo and navbar */
+/* logo */
 #logo {
     color: var(--primary-navy);
+    margin-inline: 2rem;
+}
+
+#logo,
+.logo {
+
     font-size: 2rem;
     font-weight: 700;
-    margin-inline: 2rem;
     cursor: pointer;
     transition: text-shadow 0.3s;
 }
@@ -72,6 +77,11 @@ body {
     text-shadow: 2px 2px rgba(0 0 0 / 0.1);
 }
 
+.logo:hover {
+    text-shadow: 2px 2px rgba(255 255 255 / 0.1);
+}
+
+/* Navbar */
 nav i {
     font-size: 2rem;
 }
@@ -127,7 +137,7 @@ h1.heading {
     border-radius: 8px;
     border: 5px solid white;
     box-shadow: 2px 5px 10px rgba(0 0 0 / 0.1);
-    
+
 }
 
 .card-body {
@@ -156,12 +166,80 @@ h1.heading {
     color: var(--font-dark-3);
 }
 
-/*-------------------- REUSABLE CLASS --------------------*/
-/*  */
+/* Footer */
+footer.section-container {
+    margin-block: 0;
+}
+
+#contact {
+    background-color: var(--primary-navy);
+}
+
+footer {
+    color: var(--font-light);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+}
+
+footer .btn-primary:hover {
+    box-shadow: 5px 5px 5px rgb(249 115 22/ 0.2);
+}
+
+#footer-form-elements input {
+    padding: 20px;
+    font-size: 1.5rem;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+footer nav a:hover {
+    cursor: pointer;
+    color: var(--accent-orange);
+}
+
+/*-------------------- RESPONSIVE --------------------*/
+/* for medium screens */
 @media screen and (min-width: 768px) {
     #about .card {
-    min-height: 220px;
+        min-height: 220px;
+    }
+
+    #copyright {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+    }
 }
+
+/* for large screens */
+@media screen and (min-width: 1024px) {
+    #footer-form {
+        justify-self: end;
+    }
+
+    #footer-form-elements {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #footer-form-elements input {
+        border-top-right-radius: initial;
+        border-bottom-right-radius: initial;
+    }
+
+    #footer-form-elements button {
+        border-top-left-radius: initial;
+        border-bottom-left-radius: initial;
+    }
+
+    /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+    @media screen and (min-width: 2048px) {
+        body {
+            zoom: 1.4;
+        }
+    }
 }
 
 /* Product Cards:
