@@ -58,6 +58,10 @@ body {
     box-shadow: 5px 5px 5px rgba(0 0 0 / 0.1);
 }
 
+.ri-star-fill {
+    color: #FFD700;
+}
+
 /* logo */
 #logo {
     color: var(--primary-navy);
@@ -119,10 +123,6 @@ h1.heading {
     color: var(--font-dark-2);
 }
 
-/* #about .grid {
-    grid-auto-rows: 1fr;
-} */
-
 #about .card {
     border-radius: 8px;
     min-height: 170px;
@@ -140,30 +140,70 @@ h1.heading {
 
 }
 
-.card-body {
+#about .card-body {
     position: relative;
 }
 
-.card-body .card-icon-container {
+#about .card-body .card-icon-container {
     position: absolute;
     top: -30px;
 }
 
-.card-body i {
+#about .card-body i {
     font-size: 2.8rem;
     color: var(--accent-orange);
 }
 
-.card-title {
+#about .card-title {
     font-size: 2rem;
     font-family: "Montserrat", sans-serif;
     margin-top: 30px;
 }
 
-.card-body p {
+#about .card-body p {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--font-dark-3);
+}
+
+/* Products */
+#products .card {
+    border-radius: 8px;
+}
+
+#products .badge-xl {
+    color: var(--primary-navy);
+    background-color: var(--secondary-navy);
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-family: "Montserrat", sans-serif;
+}
+
+#products .card-actions button:first-of-type {
+    background-color: transparent;
+    color: var(--font-dark-3);
+    border: 2px solid rgba(30, 41, 59, 0.1);
+    ;
+}
+
+#products figure {
+    width: 100%;
+    background-color: var(--secondary-navy);
+    padding: 20px;
+}
+
+#products img {
+    width: 200px;
+    height: 300px;
+}
+
+#products h4 {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 240px;
+    display: block;
 }
 
 /* Footer */
@@ -199,6 +239,13 @@ footer nav a:hover {
 }
 
 /*-------------------- RESPONSIVE --------------------*/
+/* for small screens */
+@media screen and (min-width: 425px) {
+    #products h4 {
+        width: 320px;
+    }
+}
+
 /* for medium screens */
 @media screen and (min-width: 768px) {
     #about .card {
@@ -209,6 +256,10 @@ footer nav a:hover {
         display: flex;
         justify-content: space-between;
         flex-direction: row-reverse;
+    }
+
+    #products h4 {
+        width: 260px;
     }
 }
 
@@ -234,11 +285,17 @@ footer nav a:hover {
         border-bottom-left-radius: initial;
     }
 
-    /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
-    @media screen and (min-width: 2048px) {
-        body {
-            zoom: 1.4;
-        }
+    #products h4 {
+        width: 240px;
+    }
+
+
+}
+
+/* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width: 2048px) {
+    body {
+        zoom: 1.4;
     }
 }
 
