@@ -94,7 +94,7 @@ const displayAllProducts = (products, container) => {
               </h4>
               <p class="card-title text-3xl">$${product.price}</p>
               <div class="card-actions justify-between mt-5 gap-5">
-                <button class="btn btn-primary w-full lg:w-[40%]">
+                <button onclick=loadProductDetails(${product.id}) class="btn btn-primary w-full lg:w-[40%]">
                   <i class="ri-eye-line"></i> Details
                 </button>
                 <button class="btn btn-primary w-full lg:w-[40%]">
@@ -153,6 +153,41 @@ const loadProductsByCategory = (category) => {
       displayAllProducts(products, allProductsDisplayContainer);
       // console.log(url);
     });
+};
+
+// ==================== LOAD PRODUCT DETAILS ====================
+const loadProductDetails = (id) => {
+  const url = `https://fakestoreapi.com/products/${id}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((product) => displayProductDetails(product));
+};
+
+// ==================== DISPLAY PRODUCT DETAILS ====================
+const displayProductDetails = (product) => {
+  const detailsContainer = document.getElementById("product-details-container");
+  detailsContainer.innerHTML = `
+      <div class="img-container w-full grid place-items-center">
+        <img
+          src="${product.image}"
+          alt="${product.name}"
+          class="product-image w-[200px]"
+        />
+      </div>
+      <p class="text-center text-4xl font-semibold">$${product.price}</p>
+      <div>
+        <h4 class="product-title text-3xl font-medium text-gray-600">
+          ${product.title}
+        </h4>
+        <p class="mt-5 text-gray-400">
+         ${product.description}
+        </p>
+      </div>
+
+      <button class="btn btn-primary w-full">Buy Now</button>
+      <button class="btn btn-primary w-full">Add to Cart</button>
+  `;
+  document.getElementById("product_modal").showModal();
 };
 
 // ==================== CALL FUNCTIONS ====================
