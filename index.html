@@ -40,10 +40,10 @@
         <!---------- menu items on large screen ---------->
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 gap-7">
-            <li><a href="#home" class="text-2xl active">Home</a></li>
-            <li><a href="#products" class="text-2xl">Products</a></li>
-            <li><a href="#about" class="text-2xl">About</a></li>
-            <li><a href="#contact" class="text-2xl">Contact</a></li>
+            <li><a href="#home" class="nav-link text-2xl active">Home</a></li>
+            <li><a href="#products" class="nav-link text-2xl">Products</a></li>
+            <li><a href="#about" class="nav-link text-2xl">About</a></li>
+            <li><a href="#contact" class="nav-link text-2xl">Contact</a></li>
           </ul>
         </div>
         <!---------- cart and hamburger on small screen ---------->
@@ -60,10 +60,10 @@
               tabindex="-1"
               class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
-              <li><a href="#home" class="text-xl">Home</a></li>
-              <li><a href="#products" class="text-xl">Products</a></li>
-              <li><a href="#about" class="text-xl">About</a></li>
-              <li><a href="#contact" class="text-xl">Contact</a></li>
+              <li><a href="#home" class="nav-link text-xl active">Home</a></li>
+              <li><a href="#products" class="nav-link text-xl">Products</a></li>
+              <li><a href="#about" class="nav-link text-xl">About</a></li>
+              <li><a href="#contact" class="nav-link text-xl">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -184,13 +184,13 @@
       </div>
 
       <!-------------------- PRODUCTS -------------------->
-      <div id="products-container">
+      <div id="products-container" class="hidden">
         <section id="products" class="section-container">
           <!-- Title -->
           <h3 class="heading my-10">Our Products</h3>
 
           <!-- Category Buttons -->
-           <div id="category-btns-container" class="flex gap-10 justify-center">
+           <div id="category-btns-container" class="flex gap-10 justify-center flex-wrap">
            </div>
           <!-- Products display -->
           <div

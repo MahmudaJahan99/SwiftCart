@@ -19,6 +19,7 @@
 
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
     /* Default 16px * 62.5% = 10px base */
 }
 
@@ -39,7 +40,7 @@ body {
 }
 
 .active {
-    border-bottom: 1px solid var(--accent-orange);
+    color: var(--accent-orange);
 }
 
 .btn-primary {
@@ -55,7 +56,7 @@ body {
 .section-container {
     text-align: center;
     width: 90%;
-    margin: 40px auto;
+    margin: 50px auto;
 }
 
 .btn-primary:hover {
@@ -89,7 +90,22 @@ body {
     text-shadow: 2px 2px rgba(255 255 255 / 0.1);
 }
 
+section {
+    scroll-margin-top: 100px;
+}
+
 /* Navbar */
+header {
+    position: relative;
+}
+
+header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+
 nav i {
     font-size: 2rem;
 }
@@ -171,11 +187,13 @@ h1.heading {
 }
 
 /* trending-Products & All Products */
-#trending-products .card, #products .card {
+#trending-products .card,
+#products .card {
     border-radius: 8px;
 }
 
-#trending-products .badge-xl, #products .badge-xl {
+#trending-products .badge-xl,
+#products .badge-xl {
     color: var(--primary-navy);
     background-color: var(--secondary-navy);
     font-size: 1.25rem;
@@ -183,25 +201,29 @@ h1.heading {
     font-family: "Montserrat", sans-serif;
 }
 
-#trending-products .card-actions button:first-of-type, #products .card-actions button:first-of-type {
+#trending-products .card-actions button:first-of-type,
+#products .card-actions button:first-of-type {
     background-color: transparent;
     color: var(--font-dark-3);
     border: 2px solid rgba(30, 41, 59, 0.1);
     ;
 }
 
-#trending-products figure, #products figure {
+#trending-products figure,
+#products figure {
     width: 100%;
     background-color: var(--secondary-navy);
     padding: 20px;
 }
 
-#trending-products img, #products img {
+#trending-products img,
+#products img {
     width: 200px;
     height: 300px;
 }
 
-#trending-products h4, #products h4 {
+#trending-products h4,
+#products h4 {
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -249,7 +271,9 @@ footer nav a:hover {
 /*-------------------- RESPONSIVE --------------------*/
 /* for small screens */
 @media screen and (min-width: 425px) {
-    #trending-products h4, #products h4 {
+
+    #trending-products h4,
+    #products h4 {
         width: 320px;
     }
 }
@@ -266,7 +290,8 @@ footer nav a:hover {
         flex-direction: row-reverse;
     }
 
-    #trending-products h4, #products h4 {
+    #trending-products h4,
+    #products h4 {
         width: 260px;
     }
 }
@@ -293,7 +318,8 @@ footer nav a:hover {
         border-bottom-left-radius: initial;
     }
 
-    #trending-products h4, #products h4 {
+    #trending-products h4,
+    #products h4 {
         width: 240px;
     }
 

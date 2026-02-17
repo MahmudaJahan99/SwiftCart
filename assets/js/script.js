@@ -9,6 +9,9 @@ const allCategoriesContainer = document.getElementById(
   "category-btns-container",
 );
 
+const homeContents = document.getElementById("home-contents");
+const productsContainer = document.getElementById("products-container");
+
 // ==================== LOAD ALL DATA ====================
 const loadAllProducts = () => {
   fetch("https://fakestoreapi.com/products")
@@ -103,3 +106,40 @@ const displayAllCategories = (categories) => {
 // ==================== CALL FUNCTIONS ====================
 loadAllProducts();
 loadAllCategories();
+
+const navLinks = document.querySelectorAll(".nav-link");
+// Remove active from all links
+function removeActive() {
+  navLinks.forEach((link) => link.classList.remove("active"));
+}
+
+// ================= SCROLL ACTIVE =================
+navLinks.forEach((link) => {
+  link.addEventListener("click", function (e) {
+    removeActive();
+    this.classList.add("active");
+  });
+});
+
+// ================= SCROLL ACTIVE =================
+const sections = document.querySelectorAll("section[id]");
+const scrollActive = () => {
+  // We get the position by scrolling down
+  const scrollY = window.scrollY;
+
+  sections.forEach((section) => {
+    const id = section.id, //id of each section
+      top = section.offsetTop - 50, //distance from the top edge
+      height = section.offsetHeight, //Element height
+      sectionId = section.getAttribute("id"); //id nav link
+
+    if (scrollY >= top && scrollY < top + height) {
+      removeActive();
+
+      document
+        .querySelectorAll(`.nav-link[href="#${sectionId}"]`)
+        .forEach((link) => link.classList.add("active"));
+    }
+  });
+};
+window.addEventListener("scroll", scrollActive);
