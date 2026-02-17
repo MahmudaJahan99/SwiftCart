@@ -185,7 +185,6 @@ const displayProductDetails = (product) => {
       </div>
 
       <button class="btn btn-primary w-full">Buy Now</button>
-      <button class="btn btn-primary w-full">Add to Cart</button>
   `;
   document.getElementById("product_modal").showModal();
 };
