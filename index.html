@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Tite & Logo -->
-    <title>OmniCart | One Stop Shop</title>
+    <title>SwiftCart | One Stop Shop</title>
     <link
       rel="shortcut icon"
       href="./assets/images/logo.png"
@@ -40,7 +40,7 @@
         <!---------- menu items on large screen ---------->
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal px-1 gap-7">
-            <li><a href="#home" class="text-2xl">Home</a></li>
+            <li><a href="#home" class="text-2xl active">Home</a></li>
             <li><a href="#products" class="text-2xl">Products</a></li>
             <li><a href="#about" class="text-2xl">About</a></li>
             <li><a href="#contact" class="text-2xl">Contact</a></li>
@@ -68,117 +68,138 @@
           </div>
         </div>
       </nav>
-
-      <!---------- Hero Section ---------->
-      <section id="home" class="-mt-20">
-        <div
-          class="hero min-h-screen"
-          style="background-image: url(assets/images/banner-image.png)"
-        >
-          <div class="hero-overlay"></div>
-          <div
-            class="hero-content text-neutral-content text-center md:text-left"
-          >
-            <div class="max-w-7xl">
-              <h1 class="mb-5 text-5xl md:text-6xl font-bold heading">
-                Best Collection For You
-              </h1>
-              <p class="mb-10 text-3xl">
-                Discover the latest trend in fashion, electronics, and more.
-                Shop with confidence and style at Swiftcart.
-              </p>
-              <button id="shop-now-btn" class="btn btn-primary">
-                Shop Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
     </header>
 
     <main>
-      <!---------- About Section ---------->
-      <section id="about" class="section-container">
-        <!-- Title -->
-        <h2 class="heading my-10">Why Choose Us</h2>
-        <p class="text-3xl font-medium my-10">
-          We provide the best shoppong experience with the top-notch services.
-        </p>
+      <!-------------------- HOME -------------------->
+      <div id="home-contents">
+        <!---------- Hero Section ---------->
+        <section id="home" class="-mt-20">
+          <div
+            class="hero min-h-screen"
+            style="background-image: url(assets/images/banner-image.png)"
+          >
+            <div class="hero-overlay"></div>
+            <div
+              class="hero-content text-neutral-content text-center md:text-left"
+            >
+              <div class="max-w-7xl">
+                <h1 class="mb-5 text-5xl md:text-6xl font-bold heading">
+                  Best Collection For You
+                </h1>
+                <p class="mb-10 text-3xl">
+                  Discover the latest trend in fashion, electronics, and more.
+                  Shop with confidence and style at Swiftcart.
+                </p>
+                <button id="shop-now-btn" class="btn btn-primary">
+                  Shop Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div
-          class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 lg:gap-10"
-        >
-          <!-- Card 1 -->
-          <div
-            class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
-          >
-            <div class="card-body">
-              <div class="card-icon-container">
-                <i class="ri-truck-line"></i>
-              </div>
-              <h3 class="card-title">Fast Delivery</h3>
-              <p>
-                Get your orders delivered to your doorstep quickly and
-                efficiently.
-              </p>
-            </div>
-          </div>
-          <!-- Card 2 -->
-          <div
-            class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
-          >
-            <div class="card-body">
-              <div class="card-icon-container">
-                <i class="ri-customer-service-line"></i>
-              </div>
-              <h3 class="card-title">24/7 Support</h3>
-              <p>
-                Our support team is available around the clock to assist you.
-              </p>
-            </div>
-          </div>
-          <!-- Card 3 -->
-          <div
-            class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
-          >
-            <div class="card-body">
-              <div class="card-icon-container">
-                <i class="ri-shield-check-line"></i>
-              </div>
-              <h3 class="card-title">Secure Payment</h3>
-              <p>
-                Experience safe and secure transactions with our encrypted
-                payment systems.
-              </p>
-            </div>
-          </div>
-          <!-- Card 4 -->
-          <div
-            class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
-          >
-            <div class="card-body">
-              <div class="card-icon-container">
-                <i class="ri-refund-2-line"></i>
-              </div>
-              <h3 class="card-title">Easy Returns</h3>
-              <p>Not satisfied? Return your products easily within 30 days.</p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <!---------- About Section ---------->
+        <section id="about" class="section-container">
+          <!-- Title -->
+          <h2 class="heading my-10">Why Choose Us</h2>
+          <p class="text-3xl font-medium my-10">
+            We provide the best shoppong experience with the top-notch services.
+          </p>
 
-      <!-- Trending Section -->
-      <section id="products" class="section-container">
-        <!-- Title -->
-        <h3 class="heading my-10">Trending Now</h3>
+          <div
+            class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-20 lg:gap-10"
+          >
+            <!-- Card 1 -->
+            <div
+              class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
+            >
+              <div class="card-body">
+                <div class="card-icon-container">
+                  <i class="ri-truck-line"></i>
+                </div>
+                <h3 class="card-title">Fast Delivery</h3>
+                <p>
+                  Get your orders delivered to your doorstep quickly and
+                  efficiently.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
+            >
+              <div class="card-body">
+                <div class="card-icon-container">
+                  <i class="ri-customer-service-line"></i>
+                </div>
+                <h3 class="card-title">24/7 Support</h3>
+                <p>
+                  Our support team is available around the clock to assist you.
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
+            >
+              <div class="card-body">
+                <div class="card-icon-container">
+                  <i class="ri-shield-check-line"></i>
+                </div>
+                <h3 class="card-title">Secure Payment</h3>
+                <p>
+                  Experience safe and secure transactions with our encrypted
+                  payment systems.
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="card w-11/12 m-auto bg-base-100 card-md shadow-sm text-start"
+            >
+              <div class="card-body">
+                <div class="card-icon-container">
+                  <i class="ri-refund-2-line"></i>
+                </div>
+                <h3 class="card-title">Easy Returns</h3>
+                <p>
+                  Not satisfied? Return your products easily within 30 days.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <div
-        id="products-display-container"
-          class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-10"
-        >
-          
-        </div>
-      </section>
+        <!---------- Trending Section ---------->
+        <section id="trending-products" class="section-container">
+          <!-- Title -->
+          <h3 class="heading my-10">Trending Now</h3>
+          <!-- Products display -->
+          <div
+            id="trending-products-display-container"
+            class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 lg:gap-10"
+          ></div>
+        </section>
+      </div>
+
+      <!-------------------- PRODUCTS -------------------->
+      <div id="products-container">
+        <section id="products" class="section-container">
+          <!-- Title -->
+          <h3 class="heading my-10">Our Products</h3>
+
+          <!-- Category Buttons -->
+           <div id="category-btns-container">
+            
+           </div>
+          <!-- Products display -->
+          <div
+            id="all-products-display-container"
+            class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 lg:gap-10"
+          ></div>
+        </section>
+      </div>
 
       <!-------------------- FOOTER -------------------->
       <section id="contact" class="">
@@ -259,6 +280,7 @@
         </footer>
       </section>
     </main>
+
     <!-------------------- JAVASCRIPT -------------------->
     <script src="./assets/js/script.js"></script>
   </body>

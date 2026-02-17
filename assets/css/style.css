@@ -38,6 +38,10 @@ body {
     font-size: 3rem;
 }
 
+.active {
+    border-bottom: 1px solid var(--accent-orange);
+}
+
 .btn-primary {
     color: var(--font-light);
     padding: 20px;
@@ -166,12 +170,12 @@ h1.heading {
     color: var(--font-dark-3);
 }
 
-/* Products */
-#products .card {
+/* trending-Products & All Products */
+#trending-products .card, #products .card {
     border-radius: 8px;
 }
 
-#products .badge-xl {
+#trending-products .badge-xl, #products .badge-xl {
     color: var(--primary-navy);
     background-color: var(--secondary-navy);
     font-size: 1.25rem;
@@ -179,25 +183,25 @@ h1.heading {
     font-family: "Montserrat", sans-serif;
 }
 
-#products .card-actions button:first-of-type {
+#trending-products .card-actions button:first-of-type, #products .card-actions button:first-of-type {
     background-color: transparent;
     color: var(--font-dark-3);
     border: 2px solid rgba(30, 41, 59, 0.1);
     ;
 }
 
-#products figure {
+#trending-products figure, #products figure {
     width: 100%;
     background-color: var(--secondary-navy);
     padding: 20px;
 }
 
-#products img {
+#trending-products img, #products img {
     width: 200px;
     height: 300px;
 }
 
-#products h4 {
+#trending-products h4, #products h4 {
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -241,7 +245,7 @@ footer nav a:hover {
 /*-------------------- RESPONSIVE --------------------*/
 /* for small screens */
 @media screen and (min-width: 425px) {
-    #products h4 {
+    #trending-products h4, #products h4 {
         width: 320px;
     }
 }
@@ -258,7 +262,7 @@ footer nav a:hover {
         flex-direction: row-reverse;
     }
 
-    #products h4 {
+    #trending-products h4, #products h4 {
         width: 260px;
     }
 }
@@ -285,7 +289,7 @@ footer nav a:hover {
         border-bottom-left-radius: initial;
     }
 
-    #products h4 {
+    #trending-products h4, #products h4 {
         width: 240px;
     }
 

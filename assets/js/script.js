@@ -1,6 +1,9 @@
 //
-const productsDisplayContainer = document.getElementById(
-  "products-display-container",
+const trendingProductsDisplayContainer = document.getElementById(
+  "trending-products-display-container",
+);
+const allProductsDisplayContainer = document.getElementById(
+  "all-products-display-container",
 );
 
 // ==================== LOAD ALL DATA ====================
@@ -8,19 +11,23 @@ const loadAllProducts = () => {
   fetch("https://fakestoreapi.com/products")
     .then((response) => response.json())
     .then((products) => {
-      const trending = products
+      // 1. Display Trending (Top 3 by rating)
+      const trending = [...products]
         .sort(
           (product1, product2) => product2.rating.rate - product1.rating.rate,
         )
         .slice(0, 3);
-      displayAllProducts(trending);
+      displayAllProducts(trending, trendingProductsDisplayContainer);
+
+      // 2. Display All Products
+      displayAllProducts(products, allProductsDisplayContainer)
     });
 };
 
 // ==================== DISPLAY ALL DATA ====================
-const displayAllProducts = (products) => {
+const displayAllProducts = (products, container) => {
   // clear the container
-  productsDisplayContainer.innerHTML = "";
+  container.innerHTML = "";
 
   // create dynamic cards for products
   for (let product of products) {
@@ -59,7 +66,7 @@ const displayAllProducts = (products) => {
     `;
 
     // append container
-    productsDisplayContainer.append(cardContainer);
+    container.append(cardContainer);
   }
 };
 
